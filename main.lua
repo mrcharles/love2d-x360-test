@@ -154,8 +154,6 @@ local axes =
 }
 
 function love.load()
-	x1 = xbox.acquire(1)
-
 	padimg = love.graphics.newImage("xboxpad.png")
 
 
@@ -193,7 +191,7 @@ function love.draw()
 		end
 
 		local hat = love.joystick.getHat(i, 1)
-		if love.joystick.isOpen(i) then
+		if hat ~= "" and love.joystick.isOpen(i) then
 			love.graphics.circle("fill", hats[hat][1], hats[hat][2], 5)
 		end
 	end
