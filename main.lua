@@ -1,3 +1,5 @@
+love.joystick = require('XInputLUA')
+
 local colors = 
 {
 	{0, 255, 0, 128},
