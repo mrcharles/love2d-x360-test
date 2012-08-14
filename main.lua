@@ -196,6 +196,12 @@ function love.draw()
 		if hat ~= "" and love.joystick.isOpen(i) then
 			love.graphics.circle("fill", hats[hat][1], hats[hat][2], 5)
 		end
+
+		lt = love.joystick.getAxis(i, 5) 
+		rt = love.joystick.getAxis(i, 6)
+
+		love.joystick.setRumble(i, lt)
+		love.joystick.setVibrate(i, rt)
 	end
 
 	for i=1,4 do
